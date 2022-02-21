@@ -1,7 +1,6 @@
 import "./style.css";
 
 function Product({ product, addToCart }) {
-  console.log();
   return (
     <div
       className={
