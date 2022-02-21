@@ -40,28 +40,16 @@ function App() {
   function filterItens(search) {
     const filtered = products.filter((element) =>
       element.name
-        .normalize("NFD")
         .replace(/[\u0300-\u036f]/g, "")
         .toLowerCase()
-        .includes(
-          search
-            .normalize("NFD")
-            .replace(/[\u0300-\u036f]/g, "")
-            .toLowerCase()
-        )
+        .includes(search.replace(/[\u0300-\u036f]/g, "").toLowerCase())
     );
 
     const filteredCategory = products.filter((element) =>
       element.category
-        .normalize("NFD")
         .replace(/[\u0300-\u036f]/g, "")
         .toLowerCase()
-        .includes(
-          search
-            .normalize("NFD")
-            .replace(/[\u0300-\u036f]/g, "")
-            .toLowerCase()
-        )
+        .includes(search.replace(/[\u0300-\u036f]/g, "").toLowerCase())
     );
 
     if (filtered.length === 0) {
